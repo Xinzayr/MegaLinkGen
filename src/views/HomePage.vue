@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex flex-col">
+  <div class="min-h-screen flex flex-col bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950">
     <AppHeader />
 
     <!-- Main Content Area -->
@@ -44,7 +44,6 @@ import { useI18n } from 'vue-i18n'
 import AppFooter from '../components/AppFooter.vue'
 import AppHeader from '../components/AppHeader.vue'
 import FeaturesGrid from '../components/FeaturesGrid.vue'
-import HistoryPanel from '../components/HistoryPanel.vue'
 import LinkInput from '../components/LinkInput.vue'
 import ResultsDisplay from '../components/ResultsDisplay.vue'
 
