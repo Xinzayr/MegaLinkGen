@@ -1,0 +1,140 @@
+{
+    "app": {
+        "title": "Generador de Enlaces Mega",
+        "subtitle": "Genera enlaces de descarga directa desde URLs de Mega.nz",
+        "version": "v2.0"
+    },
+    "nav": {
+        "home": "Inicio",
+        "history": "Historial",
+        "about": "Acerca de"
+    },
+    "input": {
+        "label": "URL de Mega.nz",
+        "placeholder": "https://mega.nz/file/...",
+        "singleMode": "Modo Individual",
+        "multiMode": "Modo Múltiple",
+        "multiPlaceholder": "Pega múltiples URLs (una por línea)",
+        "dragDrop": "Arrastra y suelta texto con URLs de Mega aquí",
+        "dragActive": "¡Suelta aquí!"
+    },
+    "buttons": {
+        "generate": "Generar Enlace",
+        "copy": "Copiar",
+        "copied": "¡Copiado!",
+        "download": "Descargar",
+        "clear": "Limpiar",
+        "testLink": "Probar Enlace",
+        "testing": "Probando...",
+        "process": "Procesar Enlaces",
+        "processing": "Procesando...",
+        "showQR": "Mostrar QR",
+        "downloadQR": "Descargar QR",
+        "export": "Exportar JSON"
+    },
+    "results": {
+        "title": "Resultado",
+        "fileName": "Nombre del archivo",
+        "fileSize": "Tamaño",
+        "directLink": "Enlace Directo",
+        "linkStatus": "Estado del enlace",
+        "working": "Funcionando",
+        "broken": "Roto",
+        "unknown": "No probado",
+        "qrCode": "Código QR",
+        "stats": "Estadísticas de Descarga"
+    },
+    "stats": {
+        "downloads": "Descargas",
+        "bandwidth": "Ancho de banda usado",
+        "lastAccess": "Último acceso"
+    },
+    "history": {
+        "title": "Historial de Enlaces",
+        "show": "Mostrar Historial",
+        "hide": "Ocultar Historial",
+        "empty": "No hay enlaces en el historial",
+        "regenerate": "Regenerar",
+        "delete": "Eliminar",
+        "clear": "Limpiar Todo",
+        "confirmClear": "¿Seguro que quieres limpiar todo el historial?"
+    },
+    "multiLink": {
+        "title": "Resultados del Procesamiento Múltiple",
+        "processed": "Procesados",
+        "success": "Exitosos",
+        "failed": "Fallidos",
+        "itemStatus": "Estado"
+    },
+    "features": {
+        "title": "Características",
+        "pwa": {
+            "title": "PWA Instalable",
+            "desc": "Instala la app y úsala offline"
+        },
+        "batch": {
+            "title": "Procesamiento por Lotes",
+            "desc": "Procesa múltiples enlaces a la vez"
+        },
+        "history": {
+            "title": "Historial Local",
+            "desc": "Guarda tus enlaces automáticamente"
+        },
+        "qr": {
+            "title": "Códigos QR",
+            "desc": "Genera QR para compartir fácilmente"
+        },
+        "i18n": {
+            "title": "Multi-idioma",
+            "desc": "Disponible en 4 idiomas"
+        },
+        "test": {
+            "title": "Verificación de Enlaces",
+            "desc": "Comprueba si los enlaces funcionan"
+        }
+    },
+    "errors": {
+        "invalidUrl": "URL de Mega.nz no válida",
+        "networkError": "Error de red. Verifica tu conexión",
+        "serverError": "Error del servidor. Intenta de nuevo",
+        "timeout": "La solicitud tardó demasiado",
+        "folderNotSupported": "Enlaces de carpetas no soportados actualmente",
+        "rateLimited": "Demasiadas solicitudes. Espera {seconds}s",
+        "generic": "Algo salió mal. Intenta de nuevo"
+    },
+    "developer": {
+        "mode": "Modo Desarrollador",
+        "enable": "Activar",
+        "disable": "Desactivar",
+        "apiCall": "Llamada API",
+        "responseTime": "Tiempo de respuesta",
+        "headers": "Encabezados",
+        "timestamp": "Marca de tiempo"
+    },
+    "dragDrop": {
+        "hint": "Arrastra archivos de texto o URLs aquí",
+        "active": "¡Suelta para procesar!"
+    },
+    "language": {
+        "select": "Idioma",
+        "es": "Español",
+        "en": "English",
+        "pt": "Português",
+        "fr": "Français"
+    },
+    "footer": {
+        "disclaimer": "Esta herramienta no almacena ni registra tus enlaces",
+        "opensource": "Código abierto",
+        "madeWith": "Hecho con",
+        "by": "por"
+    },
+    "install": {
+        "prompt": "Instala esta app para usarla offline",
+        "button": "Instalar",
+        "dismiss": "Ahora no"
+    },
+    "rateLimit": {
+        "active": "Límite de tasa activo",
+        "wait": "Espera {seconds}s"
+    }
+}

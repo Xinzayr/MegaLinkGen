@@ -1,0 +1,140 @@
+{
+    "app": {
+        "title": "Gerador de Links Mega",
+        "subtitle": "Gere links de download direto de URLs Mega.nz",
+        "version": "v2.0"
+    },
+    "nav": {
+        "home": "Início",
+        "history": "Histórico",
+        "about": "Sobre"
+    },
+    "input": {
+        "label": "URL do Mega.nz",
+        "placeholder": "https://mega.nz/file/...",
+        "singleMode": "Modo Individual",
+        "multiMode": "Modo Múltiplo",
+        "multiPlaceholder": "Cole várias URLs (uma por linha)",
+        "dragDrop": "Arraste e solte texto com URLs Mega aqui",
+        "dragActive": "Solte aqui!"
+    },
+    "buttons": {
+        "generate": "Gerar Link",
+        "copy": "Copiar",
+        "copied": "Copiado!",
+        "download": "Baixar",
+        "clear": "Limpar",
+        "testLink": "Testar Link",
+        "testing": "Testando...",
+        "process": "Processar Links",
+        "processing": "Processando...",
+        "showQR": "Mostrar QR",
+        "downloadQR": "Baixar QR",
+        "export": "Exportar JSON"
+    },
+    "results": {
+        "title": "Resultado",
+        "fileName": "Nome do arquivo",
+        "fileSize": "Tamanho",
+        "directLink": "Link Direto",
+        "linkStatus": "Status do link",
+        "working": "Funcionando",
+        "broken": "Quebrado",
+        "unknown": "Não testado",
+        "qrCode": "Código QR",
+        "stats": "Estatísticas de Download"
+    },
+    "stats": {
+        "downloads": "Downloads",
+        "bandwidth": "Banda usada",
+        "lastAccess": "Último acesso"
+    },
+    "history": {
+        "title": "Histórico de Links",
+        "show": "Mostrar Histórico",
+        "hide": "Ocultar Histórico",
+        "empty": "Nenhum link no histórico",
+        "regenerate": "Regenerar",
+        "delete": "Excluir",
+        "clear": "Limpar Tudo",
+        "confirmClear": "Tem certeza que deseja limpar todo o histórico?"
+    },
+    "multiLink": {
+        "title": "Resultados do Processamento Múltiplo",
+        "processed": "Processados",
+        "success": "Bem-sucedidos",
+        "failed": "Falhados",
+        "itemStatus": "Status"
+    },
+    "features": {
+        "title": "Recursos",
+        "pwa": {
+            "title": "PWA Instalável",
+            "desc": "Instale o app e use offline"
+        },
+        "batch": {
+            "title": "Processamento em Lote",
+            "desc": "Processe vários links de uma vez"
+        },
+        "history": {
+            "title": "Histórico Local",
+            "desc": "Salve seus links automaticamente"
+        },
+        "qr": {
+            "title": "Códigos QR",
+            "desc": "Gere QR para compartilhar facilmente"
+        },
+        "i18n": {
+            "title": "Multi-idioma",
+            "desc": "Disponível em 4 idiomas"
+        },
+        "test": {
+            "title": "Verificação de Links",
+            "desc": "Verifique se os links funcionam"
+        }
+    },
+    "errors": {
+        "invalidUrl": "URL Mega.nz inválida",
+        "networkError": "Erro de rede. Verifique sua conexão",
+        "serverError": "Erro do servidor. Tente novamente",
+        "timeout": "A solicitação demorou muito",
+        "folderNotSupported": "Links de pasta não suportados atualmente",
+        "rateLimited": "Muitas solicitações. Aguarde {seconds}s",
+        "generic": "Algo deu errado. Tente novamente"
+    },
+    "developer": {
+        "mode": "Modo Desenvolvedor",
+        "enable": "Ativar",
+        "disable": "Desativar",
+        "apiCall": "Chamada API",
+        "responseTime": "Tempo de resposta",
+        "headers": "Cabeçalhos",
+        "timestamp": "Timestamp"
+    },
+    "dragDrop": {
+        "hint": "Arraste arquivos de texto ou URLs aqui",
+        "active": "Solte para processar!"
+    },
+    "language": {
+        "select": "Idioma",
+        "es": "Español",
+        "en": "English",
+        "pt": "Português",
+        "fr": "Français"
+    },
+    "footer": {
+        "disclaimer": "Esta ferramenta não armazena nem registra seus links",
+        "opensource": "Código aberto",
+        "madeWith": "Feito com",
+        "by": "por"
+    },
+    "install": {
+        "prompt": "Instale este app para usá-lo offline",
+        "button": "Instalar",
+        "dismiss": "Agora não"
+    },
+    "rateLimit": {
+        "active": "Limite de taxa ativo",
+        "wait": "Aguarde {seconds}s"
+    }
+}

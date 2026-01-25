@@ -1,0 +1,140 @@
+{
+    "app": {
+        "title": "Mega Link Generator",
+        "subtitle": "Generate direct download links from Mega.nz URLs",
+        "version": "v2.0"
+    },
+    "nav": {
+        "home": "Home",
+        "history": "History",
+        "about": "About"
+    },
+    "input": {
+        "label": "Mega.nz URL",
+        "placeholder": "https://mega.nz/file/...",
+        "singleMode": "Single Mode",
+        "multiMode": "Multiple Mode",
+        "multiPlaceholder": "Paste multiple URLs (one per line)",
+        "dragDrop": "Drag and drop text with Mega URLs here",
+        "dragActive": "Drop here!"
+    },
+    "buttons": {
+        "generate": "Generate Link",
+        "copy": "Copy",
+        "copied": "Copied!",
+        "download": "Download",
+        "clear": "Clear",
+        "testLink": "Test Link",
+        "testing": "Testing...",
+        "process": "Process Links",
+        "processing": "Processing...",
+        "showQR": "Show QR",
+        "downloadQR": "Download QR",
+        "export": "Export JSON"
+    },
+    "results": {
+        "title": "Result",
+        "fileName": "File name",
+        "fileSize": "Size",
+        "directLink": "Direct Link",
+        "linkStatus": "Link status",
+        "working": "Working",
+        "broken": "Broken",
+        "unknown": "Not tested",
+        "qrCode": "QR Code",
+        "stats": "Download Statistics"
+    },
+    "stats": {
+        "downloads": "Downloads",
+        "bandwidth": "Bandwidth used",
+        "lastAccess": "Last access"
+    },
+    "history": {
+        "title": "Link History",
+        "show": "Show History",
+        "hide": "Hide History",
+        "empty": "No links in history",
+        "regenerate": "Regenerate",
+        "delete": "Delete",
+        "clear": "Clear All",
+        "confirmClear": "Are you sure you want to clear all history?"
+    },
+    "multiLink": {
+        "title": "Multiple Processing Results",
+        "processed": "Processed",
+        "success": "Successful",
+        "failed": "Failed",
+        "itemStatus": "Status"
+    },
+    "features": {
+        "title": "Features",
+        "pwa": {
+            "title": "Installable PWA",
+            "desc": "Install the app and use it offline"
+        },
+        "batch": {
+            "title": "Batch Processing",
+            "desc": "Process multiple links at once"
+        },
+        "history": {
+            "title": "Local History",
+            "desc": "Save your links automatically"
+        },
+        "qr": {
+            "title": "QR Codes",
+            "desc": "Generate QR for easy sharing"
+        },
+        "i18n": {
+            "title": "Multi-language",
+            "desc": "Available in 4 languages"
+        },
+        "test": {
+            "title": "Link Verification",
+            "desc": "Check if links are working"
+        }
+    },
+    "errors": {
+        "invalidUrl": "Invalid Mega.nz URL",
+        "networkError": "Network error. Check your connection",
+        "serverError": "Server error. Try again",
+        "timeout": "Request took too long",
+        "folderNotSupported": "Folder links not currently supported",
+        "rateLimited": "Too many requests. Wait {seconds}s",
+        "generic": "Something went wrong. Try again"
+    },
+    "developer": {
+        "mode": "Developer Mode",
+        "enable": "Enable",
+        "disable": "Disable",
+        "apiCall": "API Call",
+        "responseTime": "Response time",
+        "headers": "Headers",
+        "timestamp": "Timestamp"
+    },
+    "dragDrop": {
+        "hint": "Drag text files or URLs here",
+        "active": "Drop to process!"
+    },
+    "language": {
+        "select": "Language",
+        "es": "Español",
+        "en": "English",
+        "pt": "Português",
+        "fr": "Français"
+    },
+    "footer": {
+        "disclaimer": "This tool does not store or log your links",
+        "opensource": "Open source",
+        "madeWith": "Made with",
+        "by": "by"
+    },
+    "install": {
+        "prompt": "Install this app to use it offline",
+        "button": "Install",
+        "dismiss": "Not now"
+    },
+    "rateLimit": {
+        "active": "Rate limit active",
+        "wait": "Wait {seconds}s"
+    }
+}
