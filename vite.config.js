@@ -4,11 +4,14 @@ import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vitejs.dev/config/
+const BASE = process.env.GITHUB_PAGES === 'true' ? '/MegaLinkGen/' : '/'
+
 export default defineConfig({
     plugins: [
         vue(),
         VitePWA({
             registerType: 'autoUpdate',
+            selfDestroying: true, // forzar limpieza de SW viejo en GH Pages
             includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
             manifest: {
                 name: 'Mega Link Generator',
@@ -18,8 +21,8 @@ export default defineConfig({
                 background_color: '#FFFFFF',
                 display: 'standalone',
                 orientation: 'portrait-primary',
-                scope: '/',
-                start_url: '/',
+                scope: BASE,
+                start_url: BASE,
                 icons: [
                     {
                         src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"%3E%3Crect width="512" height="512" rx="128" fill="%23D32F2F"/%3E%3Cpath d="M128 160l128 192 128-192v192H128z" fill="%23fff"/%3E%3C/svg%3E',
@@ -33,12 +36,13 @@ export default defineConfig({
                         name: 'Generate Link',
                         short_name: 'Generate',
                         description: 'Quick link generation',
-                        url: '/?action=generate',
+                        url: `${BASE}?action=generate`,
                         icons: []
                     }
                 ]
             },
             workbox: {
+                cleanupOutdatedCaches: true,
                 globPatterns: ['**/*.{js,css,html,ico,png,svg,json,vue,txt,woff2}'],
                 runtimeCaching: [
                     {
@@ -66,7 +70,7 @@ export default defineConfig({
     },
     // Configuración para GitHub Pages y Vercel
     // Usa /MegaLinkGen/ como base cuando se construye para GitHub Pages
-    base: process.env.GITHUB_PAGES === 'true' ? '/MegaLinkGen/' : '/',
+    base: BASE,
     build: {
         outDir: 'dist',
         assetsDir: 'assets',
