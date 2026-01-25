@@ -42,54 +42,52 @@ npm run preview
 
 ## 🚀 Despliegue
 
-### GitHub Pages
+Se pueden usar dos opciones. Ve a [VERCEL_SETUP.md](./VERCEL_SETUP.md) para instrucciones detalladas de Vercel.
+
+### GitHub Pages ✅
 
 ```bash
 # Build con base path para GitHub Pages
 GITHUB_PAGES=true npm run build
 
-# El contenido de dist/ debe subirse a la rama gh-pages
+# El contenido será automáticamente deployado por GitHub Actions a gh-pages
 ```
 
 Configura GitHub Pages en Settings > Pages:
-- Source: Deploy from a branch
-- Branch: gh-pages / root
+- **Source**: Deploy from a branch
+- **Branch**: `gh-pages` / root
 
-URL esperado (cuando Pages esté activo):
+**URL**: https://xinzayr.github.io/MegaLinkGen/
 
-- https://xinzayr.github.io/MegaLinkGen/
+**Ventajas:**
+- ✅ Totalmente gratis
+- ✅ Integración automática con GitHub Actions
+- ✅ Sin configuración extra
 
-### Vercel
+**Limitaciones:**
+- Sin backend serverless (usa API externa fallback)
+- Posibles limitaciones de CORS
 
-```bash
-# Build normal
-npm run build
+### Vercel 🚀
 
-# O usando el script
-npm run deploy:vercel
-```
+Conecta tu repositorio en Vercel para despliegue automático con serverless integrado.
 
-Conecta tu repositorio en Vercel y despliega automáticamente.
+**Pasos rápidos:**
+1. Ve a https://vercel.com y regístrate
+2. Haz clic en "Add New Project"
+3. Selecciona tu repositorio `Xinzayr/MegaLinkGen`
+4. ¡Vercel hace el resto automáticamente!
 
-Para habilitar enlaces directos confiables, este proyecto incluye una función serverless:
+**URL**: https://mega-link-gen-xinzayr.vercel.app (o tu dominio custom)
 
-- Endpoint: `/api/mega-direct-link` (Vercel)
-- Uso: el frontend llama este endpoint si defines `VITE_API_BASE` en variables de entorno (por ejemplo, `https://tu-proyecto.vercel.app`).
+**Ventajas:**
+- ⚡ Función serverless `/api/mega-direct-link` automática
+- 🌍 CDN global ultra-rápido
+- 🔒 CORS manejado correctamente
+- 🔄 Despliegue automático en cada push
+- 📊 Analytics y monitoreo integrado
 
-Variables de entorno (Vercel → Project Settings → Environment Variables):
-
-```
-VITE_API_BASE=https://tu-proyecto.vercel.app
-```
-
-Nota: En GitHub Pages no hay backend; el frontend usa un fallback y podría estar limitado por CORS del API de Mega.
-
-También puedes copiar `.env.example` a `.env` para desarrollo local y definir `VITE_API_BASE` si ejecutas un proxy o pruebas contra tu dominio de Vercel.
-
-### Configuración Manual
-
-1. **GitHub Pages**: Asegúrate de que `base` en vite.config.js coincida con tu repo name
-2. **Vercel**: El archivo `vercel.json` ya está configurado
+Ver [VERCEL_SETUP.md](./VERCEL_SETUP.md) para configuración completa y troubleshooting.
 
 ## 🌐 Uso
 
