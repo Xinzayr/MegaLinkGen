@@ -55,6 +55,10 @@ Configura GitHub Pages en Settings > Pages:
 - Source: Deploy from a branch
 - Branch: gh-pages / root
 
+URL esperado (cuando Pages esté activo):
+
+- https://xinzayr.github.io/MegaLinkGen/
+
 ### Vercel
 
 ```bash
@@ -79,6 +83,8 @@ VITE_API_BASE=https://tu-proyecto.vercel.app
 ```
 
 Nota: En GitHub Pages no hay backend; el frontend usa un fallback y podría estar limitado por CORS del API de Mega.
+
+También puedes copiar `.env.example` a `.env` para desarrollo local y definir `VITE_API_BASE` si ejecutas un proxy o pruebas contra tu dominio de Vercel.
 
 ### Configuración Manual
 
