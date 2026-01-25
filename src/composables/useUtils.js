@@ -34,23 +34,44 @@ export function useClipboard() {
 }
 
 export function useDownload() {
-    const downloadFile = (url, filename = 'download') => {
+    const megaStore = useMegaStore()
+
+    const downloadFile = (url) => {
+        if (!url) {
+            console.error('No URL provided for download')
+            return
+        }
+
         try {
-            const link = document.createElement('a')
-            link.href = url
-            link.download = filename
-            link.target = '_blank'
-            document.body.appendChild(link)
-            link.click()
-            document.body.removeChild(link)
+            // Simple redirect like the original - browser handles the download
+            megaStore.isDownloading = true
+
+            setTimeout(() => {
+                window.location.href = url
+                // Reset after delay to handle cases where user cancels
+                setTimeout(() => {
+                    megaStore.isDownloading = false
+                }, 5000)
+            }, 500)
         } catch (error) {
             console.error('Download failed:', error)
+            megaStore.isDownloading = false
+            // Fallback
             window.open(url, '_blank')
         }
     }
 
     const downloadQR = (dataUrl, filename = 'qrcode.png') => {
-        downloadFile(dataUrl, filename)
+        try {
+            const link = document.createElement('a')
+            link.href = dataUrl
+            link.download = filename
+            document.body.appendChild(link)
+            link.click()
+            document.body.removeChild(link)
+        } catch (error) {
+            console.error('QR download failed:', error)
+        }
     }
 
     return {

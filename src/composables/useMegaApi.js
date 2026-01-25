@@ -11,6 +11,7 @@ export function useMegaApi() {
     let rateLimitTimer = null
 
     const SERVERLESS_BASE = import.meta.env.VITE_API_BASE || ''
+    const EXTERNAL_API = 'https://mega.wldbs.workers.dev/api/info'
 
     const getFileInfo = async () => {
         megaStore.clearError()
@@ -32,28 +33,7 @@ export function useMegaApi() {
         const startTime = Date.now()
 
         try {
-            // Extract file ID and key from URL
             const url = megaStore.megaUrl
-            let fileId, fileKey
-
-            if (url.includes('/file/')) {
-                const match = url.match(/\/file\/([A-Za-z0-9_-]+)#([A-Za-z0-9_-]+)/)
-                if (match) {
-                    fileId = match[1]
-                    fileKey = match[2]
-                }
-            } else if (url.includes('#!')) {
-                const match = url.match(/#!([A-Za-z0-9_-]+)!([A-Za-z0-9_-]+)/)
-                if (match) {
-                    fileId = match[1]
-                    fileKey = match[2]
-                }
-            }
-
-            if (!fileId || !fileKey) {
-                throw new Error('Invalid URL format')
-            }
-
             let directLink = ''
             let infoName = 'unknown'
             let infoSize = 0
@@ -75,21 +55,30 @@ export function useMegaApi() {
                 infoName = json.fileInfo?.name || 'unknown'
                 infoSize = json.fileInfo?.size || 0
             } else {
-                // Fallback: direct Mega API call (may be blocked by CORS on GH Pages)
+                // Fallback: external API (works on GitHub Pages)
+                const formData = new FormData()
+                formData.append('megaurl', url)
+
                 const response = await fetchWithTimeout(
-                    megaStore.API_ENDPOINT,
+                    EXTERNAL_API,
                     {
                         method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify([{ a: 'g', p: fileId }])
+                        body: formData
                     },
                     megaStore.API_TIMEOUT
                 )
+
                 const data = await response.json()
-                if (!(data[0] && data[0].g)) throw new Error('Invalid response from API')
-                directLink = data[0].g
-                infoName = data[0].at ? atob(data[0].at).split(':')[1] : 'unknown'
-                infoSize = data[0].s || 0
+
+                if (!response.ok || !data.ok) {
+                    throw new Error(data.error || 'Failed to fetch file info')
+                }
+
+                infoName = data.file_name
+                infoSize = data.file_size
+                // Encode URL to base64 for download endpoint
+                const base64Url = btoa(url)
+                directLink = `https://mega.wldbs.workers.dev/download?url=${base64Url}`
             }
 
             const endTime = Date.now()
