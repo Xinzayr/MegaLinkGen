@@ -143,7 +143,15 @@
         "disclaimer": "Esta herramienta no almacena ni registra tus enlaces",
         "opensource": "Código abierto",
         "madeWith": "Hecho con",
-        "by": "por"
+        "by": "por",
+        "poweredBy": "Impulsado por",
+        "githubCopilot": "GitHub Copilot",
+        "deployment": {
+            "ghPages": "GitHub Pages",
+            "vercel": "Vercel",
+            "badge": "Despliegue"
+        },
+        "versions": "Ver otras versiones"
     },
     "install": {
         "prompt": "Instala esta app para usarla offline",

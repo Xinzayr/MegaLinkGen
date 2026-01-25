@@ -143,7 +143,15 @@
         "disclaimer": "هذه الأداة لا تخزن أو تسجل روابطك",
         "opensource": "مفتوح المصدر",
         "madeWith": "صنع بـ",
-        "by": "بواسطة"
+        "by": "بواسطة",
+        "poweredBy": "مدعوم من",
+        "githubCopilot": "GitHub Copilot",
+        "deployment": {
+            "ghPages": "GitHub Pages",
+            "vercel": "Vercel",
+            "badge": "النشر"
+        },
+        "versions": "عرض الإصدارات الأخرى"
     },
     "install": {
         "prompt": "ثبّت هذا التطبيق للاستخدام دون اتصال",

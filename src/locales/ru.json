@@ -143,7 +143,15 @@
         "disclaimer": "Инструмент не сохраняет и не логирует ваши ссылки",
         "opensource": "Open source",
         "madeWith": "Сделано с",
-        "by": "от"
+        "by": "от",
+        "poweredBy": "Поддерживается",
+        "githubCopilot": "GitHub Copilot",
+        "deployment": {
+            "ghPages": "GitHub Pages",
+            "vercel": "Vercel",
+            "badge": "Развертывание"
+        },
+        "versions": "Просмотреть другие версии"
     },
     "install": {
         "prompt": "Установите приложение для офлайн-работы",

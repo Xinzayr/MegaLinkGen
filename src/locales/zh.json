@@ -143,7 +143,15 @@
         "disclaimer": "本工具不存储或记录你的链接",
         "opensource": "开源",
         "madeWith": "用",
-        "by": "制作"
+        "by": "制作",
+        "poweredBy": "由以下驱动",
+        "githubCopilot": "GitHub Copilot",
+        "deployment": {
+            "ghPages": "GitHub Pages",
+            "vercel": "Vercel",
+            "badge": "部署"
+        },
+        "versions": "查看其他版本"
     },
     "install": {
         "prompt": "安装此应用以便离线使用",

@@ -143,7 +143,15 @@
         "disclaimer": "यह टूल आपके लिंक सहेजता या लॉग नहीं करता",
         "opensource": "ओपन सोर्स",
         "madeWith": "बनाया गया",
-        "by": "द्वारा"
+        "by": "द्वारा",
+        "poweredBy": "द्वारा संचालित",
+        "githubCopilot": "GitHub Copilot",
+        "deployment": {
+            "ghPages": "GitHub Pages",
+            "vercel": "Vercel",
+            "badge": "परिनियोजन"
+        },
+        "versions": "अन्य संस्करण देखें"
     },
     "install": {
         "prompt": "इस ऐप को ऑफ़लाइन उपयोग के लिए इंस्टॉल करें",
