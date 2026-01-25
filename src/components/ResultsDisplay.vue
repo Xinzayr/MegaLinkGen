@@ -1,30 +1,41 @@
 <template>
-  <div v-if="fileInfo && directLink" class="card">
-    <h2 class="text-xl font-bold text-gray-900 mb-4">{{ t('results.title') }}</h2>
+  <div v-if="fileInfo && directLink" class="glass rounded-xl p-6 space-y-6 shadow-2xl">
+    <div class="flex items-center justify-between border-b border-neutral-700 pb-4">
+      <h2 class="text-xl font-semibold text-white flex items-center space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-500" aria-hidden="true">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+        <span>{{ t('results.title') }}</span>
+      </h2>
+      <span class="text-xs text-neutral-500 bg-neutral-900 px-3 py-1 rounded-full">
+        {{ t('results.ready') }}
+      </span>
+    </div>
 
-    <div class="space-y-4">
+    <div class="space-y-6">
       <!-- File Info -->
-      <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
+      <div class="flex items-start space-x-4 p-4 bg-neutral-900/50 rounded-lg border border-neutral-700">
         <div class="flex-shrink-0">
-          <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+          <div class="w-12 h-12 bg-red-600/10 rounded-lg flex items-center justify-center">
             <span class="text-2xl">{{ getFileIcon(fileType) }}</span>
           </div>
         </div>
         <div class="flex-1 min-w-0">
-          <p class="text-sm font-medium text-gray-900 truncate">{{ fileInfo.name }}</p>
-          <p class="text-sm text-gray-500">
+          <p class="text-sm font-medium text-white break-all">{{ fileInfo.name }}</p>
+          <p class="text-sm text-neutral-400">
             {{ formattedFileSize.value }} {{ formattedFileSize.unit }}
           </p>
         </div>
         <div class="flex-shrink-0">
           <span :class="[
             'px-2 py-1 text-xs font-medium rounded',
-            fileType === 'video' ? 'bg-purple-100 text-purple-800' :
-            fileType === 'audio' ? 'bg-blue-100 text-blue-800' :
-            fileType === 'image' ? 'bg-green-100 text-green-800' :
-            fileType === 'document' ? 'bg-yellow-100 text-yellow-800' :
-            fileType === 'archive' ? 'bg-red-100 text-red-800' :
-            'bg-gray-100 text-gray-800'
+            fileType === 'video' ? 'bg-purple-900/40 text-purple-200' :
+            fileType === 'audio' ? 'bg-blue-900/40 text-blue-200' :
+            fileType === 'image' ? 'bg-green-900/40 text-green-200' :
+            fileType === 'document' ? 'bg-yellow-900/40 text-yellow-200' :
+            fileType === 'archive' ? 'bg-red-900/40 text-red-200' :
+            'bg-neutral-800 text-neutral-200'
           ]">
             {{ fileType }}
           </span>
@@ -33,20 +44,21 @@
 
       <!-- Direct Link -->
       <div>
-        <label class="block text-sm font-medium text-gray-700 mb-2">
+        <label class="block text-sm font-medium text-neutral-400 mb-2">
           {{ t('results.directLink') }}
         </label>
         <div class="flex space-x-2">
           <input
             :value="directLink"
             readonly
-            class="input-base flex-1 bg-gray-50 font-mono text-sm"
+            class="input-base flex-1 bg-neutral-900/50 font-mono text-sm"
           />
           <button
             @click="copy"
-            class="btn-secondary whitespace-nowrap"
+            class="btn-secondary whitespace-nowrap tooltip"
+            :data-tooltip="copyStatus ? t('buttons.copied') : t('buttons.copy')"
           >
-            {{ copyStatus ? t('buttons.copied') : t('buttons.copy') }}
+            {{ t('buttons.copy') }}
           </button>
           <button
             @click="test"
@@ -61,7 +73,7 @@
         <div v-if="linkStatus !== 'unknown'" class="mt-2 flex items-center space-x-2">
           <span :class="[
             'inline-flex items-center px-2 py-1 rounded text-xs font-medium',
-            linkStatus === 'working' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+            linkStatus === 'working' ? 'bg-green-900/40 text-green-200' : 'bg-red-900/40 text-red-200'
           ]">
             <span class="mr-1">{{ linkStatus === 'working' ? '✓' : '✗' }}</span>
             {{ t(`results.${linkStatus}`) }}
@@ -70,9 +82,9 @@
       </div>
 
       <!-- QR Code -->
-      <div v-if="qrCode" class="flex flex-col items-center p-4 bg-gray-50 rounded-lg">
-        <p class="text-sm font-medium text-gray-700 mb-3">{{ t('results.qrCode') }}</p>
-        <img :src="qrCode" alt="QR Code" class="w-64 h-64 border-4 border-white shadow-sm rounded-lg" />
+      <div v-if="qrCode" class="flex flex-col items-center p-4 bg-neutral-900/50 rounded-lg border border-neutral-700">
+        <p class="text-sm font-medium text-neutral-400 mb-3">{{ t('results.qrCode') }}</p>
+        <img :src="qrCode" alt="QR Code" class="w-64 h-64 border-4 border-neutral-800 shadow-sm rounded-lg" />
         <button
           @click="downloadQRCode"
           class="mt-3 btn-secondary text-sm"
@@ -84,7 +96,7 @@
       <!-- Download Button -->
       <button
         @click="download"
-        class="w-full btn-primary py-3 text-lg"
+        class="w-full py-3 text-lg text-white font-semibold rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-neutral-900 focus:ring-green-500 transition-all duration-200 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 shadow-lg"
       >
         <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
@@ -105,9 +117,9 @@
   </div>
 
   <!-- Multi-link Results -->
-  <div v-if="multiLinkResults.length > 0" class="card">
+  <div v-if="multiLinkResults.length > 0" class="glass rounded-xl p-6 shadow-2xl">
     <div class="flex items-center justify-between mb-4">
-      <h2 class="text-xl font-bold text-gray-900">{{ t('multiLink.title') }}</h2>
+      <h2 class="text-xl font-bold text-white">{{ t('multiLink.title') }}</h2>
       <button @click="exportResults" class="btn-secondary text-sm">
         {{ t('buttons.export') }}
       </button>
@@ -118,20 +130,20 @@
         v-for="(result, index) in multiLinkResults"
         :key="index"
         class="p-3 border rounded-lg"
-        :class="result.status === 'success' ? 'border-green-200 bg-green-50' : 'border-red-200 bg-red-50'"
+        :class="result.status === 'success' ? 'border-green-700 bg-green-900/30' : 'border-red-700 bg-red-900/30'"
       >
         <div class="flex items-start justify-between">
           <div class="flex-1 min-w-0">
-            <p class="text-sm font-medium truncate" :class="result.status === 'success' ? 'text-green-900' : 'text-red-900'">
+            <p class="text-sm font-medium truncate" :class="result.status === 'success' ? 'text-green-200' : 'text-red-200'">
               {{ result.fileName || result.url }}
             </p>
-            <p class="text-xs mt-1" :class="result.status === 'success' ? 'text-green-700' : 'text-red-700'">
+            <p class="text-xs mt-1" :class="result.status === 'success' ? 'text-green-300' : 'text-red-300'">
               {{ result.error || result.directLink }}
             </p>
           </div>
           <span :class="[
             'px-2 py-1 text-xs font-medium rounded ml-2',
-            result.status === 'success' ? 'bg-green-200 text-green-800' : 'bg-red-200 text-red-800'
+            result.status === 'success' ? 'bg-green-900/40 text-green-200' : 'bg-red-900/40 text-red-200'
           ]">
             {{ result.status }}
           </span>
@@ -139,7 +151,7 @@
       </div>
     </div>
 
-    <div class="mt-4 flex justify-between text-sm text-gray-600">
+    <div class="mt-4 flex justify-between text-sm text-neutral-400">
       <span>{{ t('multiLink.processed') }}: {{ multiLinkResults.length }}</span>
       <span>{{ t('multiLink.success') }}: {{ successCount }}</span>
       <span>{{ t('multiLink.failed') }}: {{ failedCount }}</span>

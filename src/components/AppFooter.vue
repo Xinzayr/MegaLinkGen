@@ -1,16 +1,22 @@
 <template>
-  <footer class="mt-12 py-8 bg-white border-t border-gray-200">
-    <div class="container mx-auto px-4 text-center">
-      <p class="text-sm text-gray-600 mb-2">
+  <footer class="w-full text-center p-6 text-neutral-600 text-sm border-t border-neutral-800 bg-neutral-900/50 mt-12">
+    <div class="max-w-2xl mx-auto space-y-2">
+      <p class="text-xs text-neutral-700">
         {{ t('footer.disclaimer') }}
       </p>
-      <p class="text-sm text-gray-500">
-        {{ t('footer.madeWith') }} ❤️ {{ t('footer.by') }}
-        <a href="https://github.com" target="_blank" class="text-primary-600 hover:text-primary-700 font-medium">
-          {{ t('footer.opensource') }}
+      <p class="flex items-center justify-center gap-2 flex-wrap">
+        <span class="text-neutral-500">Made with</span>
+        <span aria-hidden="true">❤️</span>
+        <a
+          href="https://github.com/Xinzayr"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-red-500 hover:text-red-400 transition-colors font-semibold hover:underline"
+        >
+          Xinzaýr
         </a>
       </p>
-      <p class="text-xs text-gray-400 mt-2">
+      <p class="text-xs text-neutral-700">
         {{ t('app.version') }}
       </p>
     </div>

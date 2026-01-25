@@ -1,8 +1,8 @@
 <template>
-  <div class="card">
+  <div class="glass rounded-xl p-6 shadow-2xl">
     <div class="mb-4">
       <div class="flex items-center justify-between mb-2">
-        <label class="block text-sm font-medium text-gray-700">
+        <label class="block text-sm font-medium text-neutral-400">
           {{ t('input.label') }}
         </label>
         <div class="flex space-x-2">
@@ -11,8 +11,8 @@
             :class="[
               'px-3 py-1 text-sm rounded-md transition-colors',
               !multiLinkMode
-                ? 'bg-primary-700 text-white'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                ? 'bg-red-600 text-white'
+                : 'bg-neutral-700 text-white hover:bg-neutral-600'
             ]"
           >
             {{ t('input.singleMode') }}
@@ -22,8 +22,8 @@
             :class="[
               'px-3 py-1 text-sm rounded-md transition-colors',
               multiLinkMode
-                ? 'bg-primary-700 text-white'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                ? 'bg-red-600 text-white'
+                : 'bg-neutral-700 text-white hover:bg-neutral-600'
             ]"
           >
             {{ t('input.multiMode') }}
@@ -37,18 +37,33 @@
           v-model="megaUrl"
           type="url"
           :placeholder="t('input.placeholder')"
-          class="input-base"
-          :class="{ 'border-red-500': error }"
+          class="input-base pr-12"
+          :class="{ 'border-red-600': error }"
           @input="clearError"
           @dragover="handleDragOver"
           @dragleave="handleDragLeave"
           @drop="handleDrop"
         />
+        <!-- Clear button -->
+        <button
+          v-if="megaUrl"
+          @click="clear"
+          class="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 hover:text-neutral-300 transition-colors p-1 rounded-full hover:bg-neutral-700"
+          aria-label="Clear input"
+          type="button"
+          tabindex="-1"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="15" y1="9" x2="9" y2="15"/>
+            <line x1="9" y1="9" x2="15" y2="15"/>
+          </svg>
+        </button>
         <div
           v-if="isDragging"
-          class="absolute inset-0 bg-primary-100 border-2 border-dashed border-primary-500 rounded-lg flex items-center justify-center"
+          class="absolute inset-0 bg-red-600/10 border-2 border-dashed border-red-500 rounded-lg flex items-center justify-center"
         >
-          <p class="text-primary-700 font-medium">{{ t('input.dragActive') }}</p>
+          <p class="text-red-600 font-medium">{{ t('input.dragActive') }}</p>
         </div>
       </div>
 
@@ -58,7 +73,7 @@
           v-model="multiLinkUrls"
           :placeholder="t('input.multiPlaceholder')"
           class="input-base min-h-[120px] font-mono text-sm"
-          :class="{ 'border-red-500': error }"
+          :class="{ 'border-red-600': error }"
           @input="clearError"
           @dragover="handleDragOver"
           @dragleave="handleDragLeave"
@@ -66,36 +81,36 @@
         ></textarea>
         <div
           v-if="isDragging"
-          class="absolute inset-0 bg-primary-100 border-2 border-dashed border-primary-500 rounded-lg flex items-center justify-center"
+          class="absolute inset-0 bg-red-600/10 border-2 border-dashed border-red-500 rounded-lg flex items-center justify-center"
         >
-          <p class="text-primary-700 font-medium">{{ t('input.dragActive') }}</p>
+          <p class="text-red-600 font-medium">{{ t('input.dragActive') }}</p>
         </div>
       </div>
 
       <!-- Drag & Drop Hint -->
-      <p class="mt-2 text-xs text-gray-500">
+      <p class="mt-2 text-xs text-neutral-500">
         {{ t('dragDrop.hint') }}
       </p>
     </div>
 
     <!-- Error Message -->
-    <div v-if="error" class="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
-      <p class="text-sm text-red-700">{{ error }}</p>
+    <div v-if="error" class="mb-4 p-3 bg-red-900/50 border border-red-700 rounded-lg shadow-lg">
+      <p class="text-sm text-red-300">{{ error }}</p>
     </div>
 
     <!-- Rate Limit Indicator -->
-    <div v-if="rateLimitCooldown > 0" class="mb-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+    <div v-if="rateLimitCooldown > 0" class="mb-4 p-3 bg-yellow-900/30 border border-yellow-700 rounded-lg">
       <div class="flex items-center justify-between mb-2">
-        <p class="text-sm text-yellow-800 font-medium">
+        <p class="text-sm text-yellow-200 font-medium">
           {{ t('rateLimit.active') }}
         </p>
-        <p class="text-sm text-yellow-700">
+        <p class="text-sm text-yellow-200">
           {{ t('rateLimit.wait', { seconds: Math.ceil(rateLimitCooldown / 1000) }) }}
         </p>
       </div>
-      <div class="w-full h-2 bg-yellow-200 rounded-full overflow-hidden">
+      <div class="w-full h-2 bg-yellow-800 rounded-full overflow-hidden">
         <div
-          class="h-full bg-yellow-500 transition-all duration-100"
+          class="h-full bg-yellow-400 transition-all duration-100"
           :style="{ width: `${rateLimitProgress}%` }"
         ></div>
       </div>
@@ -107,7 +122,7 @@
         v-if="!multiLinkMode"
         @click="generate"
         :disabled="loading || !isValidMegaUrl || rateLimitCooldown > 0"
-        class="btn-primary flex-1 flex items-center justify-center space-x-2"
+        class="btn-primary w-full flex items-center justify-center space-x-2"
       >
         <svg v-if="loading" class="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
           <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -129,12 +144,7 @@
         <span>{{ loading ? t('buttons.processing') : t('buttons.process') }}</span>
       </button>
 
-      <button
-        @click="clear"
-        class="btn-secondary"
-      >
-        {{ t('buttons.clear') }}
-      </button>
+      <button @click="clear" class="btn-secondary">{{ t('buttons.clear') }}</button>
     </div>
   </div>
 </template>
