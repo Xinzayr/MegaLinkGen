@@ -1,38 +1,39 @@
 <template>
-  <div id="app" class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-    <script setup>
-    import { registerSW } from 'virtual:pwa-register'
-    import { onMounted } from 'vue'
-    import { useHistoryStore } from './stores/history'
+  <div id="app" class="min-h-screen bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950">
+    <RouterView />
+  </div>
+</template>
 
-    const historyStore = useHistoryStore()
+<script setup>
+import { registerSW } from 'virtual:pwa-register'
+import { onMounted } from 'vue'
+import { RouterView } from 'vue-router'
+import { useHistoryStore } from './stores/history'
 
-    onMounted(() => {
-      // Load history on app mount
-      historyStore.loadHistory()
+const historyStore = useHistoryStore()
 
-      // Initialize Microsoft Clarity
-      if (typeof window !== 'undefined' && !window.clarity) {
-        (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "v70yix17wh");
-      }
+onMounted(() => {
+  // Load history on app mount
+  historyStore.loadHistory()
 
-      // Register service worker
-      if ('serviceWorker' in navigator) {
-        registerSW({
-          onNeedRefresh() {
-            console.log('New content available, please refresh.')
-          },
-          onOfflineReady() {
-            console.log('App ready to work offline')
-          },
-        })
-      }
-    })
-    </script>
+  // Initialize Microsoft Clarity
+  if (typeof window !== 'undefined' && !window.clarity) {
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "v70yix17wh");
+  }
+
+  // Register service worker
+  if ('serviceWorker' in navigator) {
+    registerSW({
+      onNeedRefresh() {
+        console.log('New content available, please refresh.')
+      },
+      onOfflineReady() {
+        console.log('App ready to work offline')
+      },
     })
   }
 })
