@@ -93,6 +93,26 @@
         </button>
       </div>
 
+            <!-- Download estimates -->
+            <div class="p-4 bg-neutral-900/50 rounded-lg border border-neutral-700 space-y-3">
+                <div class="flex items-center justify-between">
+                    <p class="text-sm font-medium text-neutral-400">{{ t('stats.estimateTitle') }}</p>
+                    <p class="text-xs text-neutral-500">{{ t('stats.sizeVisual') }}</p>
+                </div>
+                <div class="w-full h-2 bg-neutral-800 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-red-500 to-orange-400"
+                        :style="{ width: `${sizeBarPercent}%` }"></div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                    <div v-for="estimate in downloadEstimates" :key="estimate.key"
+                        class="px-3 py-2 bg-neutral-800 rounded-lg border border-neutral-700">
+                        <p class="text-xs text-neutral-500">{{ estimate.label }}</p>
+                        <p class="text-sm font-semibold text-white">{{ estimate.time }}</p>
+                    </div>
+                </div>
+            </div>
+
+     
       <!-- Download Button -->
       <button
         @click="download"
@@ -184,6 +204,39 @@ const devInfo = computed(() => megaStore.devInfo)
 const multiLinkResults = computed(() => megaStore.multiLinkResults)
 const fileType = computed(() => megaStore.fileType)
 const formattedFileSize = computed(() => megaStore.formattedFileSize)
+
+const sizeBytes = computed(() => megaStore.fileInfo?.size || 0)
+
+function formatSeconds(seconds) {
+    if (!isFinite(seconds) || seconds <= 0) return '—'
+    const h = Math.floor(seconds / 3600)
+    const m = Math.floor((seconds % 3600) / 60)
+    const s = Math.floor(seconds % 60)
+    if (h > 0) return `${h}${t('stats.time.h')} ${m}${t('stats.time.m')}`
+    if (m > 0) return `${m}${t('stats.time.m')} ${s}${t('stats.time.s')}`
+    return `${s}${t('stats.time.s')}`
+}
+
+const sizeBarPercent = computed(() => {
+    const cap = 5 * 1024 * 1024 * 1024 // 5 GB cap for the bar
+    if (!sizeBytes.value) return 5
+    const pct = (sizeBytes.value / cap) * 100
+    return Math.min(100, Math.max(5, pct))
+})
+
+const downloadEstimates = computed(() => {
+    const speeds = [
+        { key: 'slow', mbps: 5 },
+        { key: 'average', mbps: 20 },
+        { key: 'fast', mbps: 100 }
+    ]
+
+    return speeds.map(({ key, mbps }) => ({
+        key,
+        label: t(`stats.speed.${key}`),
+        time: formatSeconds((sizeBytes.value * 8) / (mbps * 1_000_000))
+    }))
+})
 
 const successCount = computed(() =>
   multiLinkResults.value.filter(r => r.status === 'success').length

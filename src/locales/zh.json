@@ -1,0 +1,157 @@
+{
+    "app": {
+        "title": "Mega 链接生成器",
+        "subtitle": "从 Mega.nz 链接生成直接下载地址",
+        "version": "v2.0"
+    },
+    "nav": {
+        "home": "首页",
+        "history": "历史",
+        "about": "关于"
+    },
+    "input": {
+        "label": "Mega.nz 链接",
+        "placeholder": "https://mega.nz/file/...",
+        "singleMode": "单个模式",
+        "multiMode": "批量模式",
+        "multiPlaceholder": "粘贴多个链接（每行一个）",
+        "dragDrop": "拖拽包含 Mega 链接的文本到此处",
+        "dragActive": "放开即可！"
+    },
+    "buttons": {
+        "generate": "生成链接",
+        "copy": "复制",
+        "copied": "已复制",
+        "download": "下载",
+        "clear": "清空",
+        "testLink": "测试链接",
+        "testing": "测试中...",
+        "process": "处理链接",
+        "processing": "处理中...",
+        "showQR": "显示二维码",
+        "downloadQR": "下载二维码",
+        "export": "导出 JSON"
+    },
+    "results": {
+        "title": "结果",
+        "fileName": "文件名",
+        "fileSize": "大小",
+        "directLink": "直链",
+        "linkStatus": "链接状态",
+        "working": "可用",
+        "broken": "不可用",
+        "unknown": "未测试",
+        "qrCode": "二维码",
+        "stats": "下载统计",
+        "ready": "就绪"
+    },
+    "stats": {
+        "downloads": "下载次数",
+        "bandwidth": "已用带宽",
+        "lastAccess": "上次访问",
+        "estimateTitle": "预估下载时间",
+        "sizeVisual": "相对大小（封顶 5 GB）",
+        "speed": {
+            "slow": "移动 (5 Mbps)",
+            "average": "家庭 (20 Mbps)",
+            "fast": "光纤 (100 Mbps)"
+        },
+        "time": {
+            "h": "时",
+            "m": "分",
+            "s": "秒"
+        }
+    },
+    "history": {
+        "title": "链接历史",
+        "show": "显示历史",
+        "hide": "隐藏历史",
+        "empty": "暂无历史记录",
+        "regenerate": "重新生成",
+        "delete": "删除",
+        "clear": "清除全部",
+        "confirmClear": "确定要清空历史吗？"
+    },
+    "multiLink": {
+        "title": "批量处理结果",
+        "processed": "已处理",
+        "success": "成功",
+        "failed": "失败",
+        "itemStatus": "状态"
+    },
+    "features": {
+        "title": "功能",
+        "pwa": {
+            "title": "可安装 PWA",
+            "desc": "安装后离线使用"
+        },
+        "batch": {
+            "title": "批量处理",
+            "desc": "一次处理多个链接"
+        },
+        "history": {
+            "title": "本地历史",
+            "desc": "自动保存你的链接"
+        },
+        "qr": {
+            "title": "二维码",
+            "desc": "生成便于分享的二维码"
+        },
+        "i18n": {
+            "title": "多语言",
+            "desc": "提供 8 种语言"
+        },
+        "test": {
+            "title": "链接校验",
+            "desc": "检查链接是否可用"
+        }
+    },
+    "errors": {
+        "invalidUrl": "无效的 Mega.nz 链接",
+        "networkError": "网络错误，请检查连接",
+        "serverError": "服务器错误，请重试",
+        "timeout": "请求超时",
+        "folderNotSupported": "暂不支持文件夹链接",
+        "rateLimited": "请求过多，请等待 {seconds}s",
+        "generic": "发生错误，请重试"
+    },
+    "developer": {
+        "mode": "开发者模式",
+        "enable": "启用",
+        "disable": "关闭",
+        "apiCall": "API 调用",
+        "responseTime": "响应时间",
+        "headers": "Headers",
+        "timestamp": "时间戳"
+    },
+    "dragDrop": {
+        "hint": "将文本文件或 URL 拖到这里",
+        "active": "释放以处理！"
+    },
+    "language": {
+        "select": "语言",
+        "es": "Español",
+        "en": "English",
+        "pt": "Português",
+        "fr": "Français",
+        "zh": "中文",
+        "hi": "हिन्दी",
+        "ar": "العربية",
+        "ru": "Русский"
+    },
+    "footer": {
+        "disclaimer": "本工具不存储或记录你的链接",
+        "opensource": "开源",
+        "madeWith": "用",
+        "by": "制作"
+    },
+    "install": {
+        "prompt": "安装此应用以便离线使用",
+        "button": "安装",
+        "dismiss": "稍后"
+    },
+    "rateLimit": {
+        "active": "已触发频率限制",
+        "wait": "请等待 {seconds}s"
+    }
+}

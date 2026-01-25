@@ -42,12 +42,25 @@
         "broken": "Broken",
         "unknown": "Not tested",
         "qrCode": "QR Code",
-        "stats": "Download Statistics"
+        "stats": "Download Statistics",
+        "ready": "Ready"
     },
     "stats": {
         "downloads": "Downloads",
         "bandwidth": "Bandwidth used",
-        "lastAccess": "Last access"
+        "lastAccess": "Last access",
+        "estimateTitle": "Estimated download time",
+        "sizeVisual": "Relative size (capped at 5 GB)",
+        "speed": {
+            "slow": "Mobile (5 Mbps)",
+            "average": "Home (20 Mbps)",
+            "fast": "Fiber (100 Mbps)"
+        },
+        "time": {
+            "h": "h",
+            "m": "m",
+            "s": "s"
+        }
     },
     "history": {
         "title": "Link History",
@@ -86,7 +99,7 @@
         },
         "i18n": {
             "title": "Multi-language",
-            "desc": "Available in 4 languages"
+            "desc": "Available in 8 languages"
         },
         "test": {
             "title": "Link Verification",
@@ -120,7 +133,11 @@
         "es": "Español",
         "en": "English",
         "pt": "Português",
-        "fr": "Français"
+        "fr": "Français",
+        "zh": "中文",
+        "hi": "हिन्दी",
+        "ar": "العربية",
+        "ru": "Русский"
     },
     "footer": {
         "disclaimer": "This tool does not store or log your links",

@@ -24,6 +24,11 @@
           <option value="en">🇬🇧 {{ t('language.en') }}</option>
           <option value="pt">🇧🇷 {{ t('language.pt') }}</option>
           <option value="fr">🇫🇷 {{ t('language.fr') }}</option>
+                    <option value="zh">🇨🇳 {{ t('language.zh') }}</option>
+                    <option value="hi">🇮🇳 {{ t('language.hi') }}</option>
+                    <option value="ar">🇸🇦 {{ t('language.ar') }}</option>
+                    <option value="ru">🇷🇺 {{ t('language.ru') }}</option>
+       
         </select>
 
         <button

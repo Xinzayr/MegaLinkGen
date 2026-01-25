@@ -42,12 +42,25 @@
         "broken": "Roto",
         "unknown": "No probado",
         "qrCode": "Código QR",
-        "stats": "Estadísticas de Descarga"
+        "stats": "Estadísticas de Descarga",
+        "ready": "Listo"
     },
     "stats": {
         "downloads": "Descargas",
         "bandwidth": "Ancho de banda usado",
-        "lastAccess": "Último acceso"
+        "lastAccess": "Último acceso",
+        "estimateTitle": "Tiempo estimado de descarga",
+        "sizeVisual": "Tamaño relativo (tope en 5 GB)",
+        "speed": {
+            "slow": "Móvil (5 Mbps)",
+            "average": "Hogar (20 Mbps)",
+            "fast": "Fibra (100 Mbps)"
+        },
+        "time": {
+            "h": "h",
+            "m": "min",
+            "s": "s"
+        }
     },
     "history": {
         "title": "Historial de Enlaces",
@@ -86,7 +99,7 @@
         },
         "i18n": {
             "title": "Multi-idioma",
-            "desc": "Disponible en 4 idiomas"
+            "desc": "Disponible en 8 idiomas"
         },
         "test": {
             "title": "Verificación de Enlaces",
@@ -120,7 +133,11 @@
         "es": "Español",
         "en": "English",
         "pt": "Português",
-        "fr": "Français"
+        "fr": "Français",
+        "zh": "中文",
+        "hi": "हिन्दी",
+        "ar": "العربية",
+        "ru": "Русский"
     },
     "footer": {
         "disclaimer": "Esta herramienta no almacena ni registra tus enlaces",

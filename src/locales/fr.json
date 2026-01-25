@@ -41,13 +41,26 @@
         "working": "Fonctionne",
         "broken": "Cassé",
         "unknown": "Non testé",
-        "qrCode": "Code QR",
-        "stats": "Statistiques de Téléchargement"
+        "qrCode": "QR Code",
+        "stats": "Statistiques de téléchargement",
+        "ready": "Prêt"
     },
     "stats": {
         "downloads": "Téléchargements",
         "bandwidth": "Bande passante utilisée",
-        "lastAccess": "Dernier accès"
+        "lastAccess": "Dernier accès",
+        "estimateTitle": "Temps de téléchargement estimé",
+        "sizeVisual": "Taille relative (limitée à 5 Go)",
+        "speed": {
+            "slow": "Mobile (5 Mbps)",
+            "average": "Maison (20 Mbps)",
+            "fast": "Fibre (100 Mbps)"
+        },
+        "time": {
+            "h": "h",
+            "m": "min",
+            "s": "s"
+        }
     },
     "history": {
         "title": "Historique des Liens",
@@ -86,7 +99,7 @@
         },
         "i18n": {
             "title": "Multilingue",
-            "desc": "Disponible en 4 langues"
+            "desc": "Disponible en 8 langues"
         },
         "test": {
             "title": "Vérification des Liens",
@@ -120,7 +133,11 @@
         "es": "Español",
         "en": "English",
         "pt": "Português",
-        "fr": "Français"
+        "fr": "Français",
+        "zh": "中文",
+        "hi": "हिन्दी",
+        "ar": "العربية",
+        "ru": "Русский"
     },
     "footer": {
         "disclaimer": "Cet outil ne stocke ni n'enregistre vos liens",

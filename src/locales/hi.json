@@ -1,0 +1,157 @@
+{
+    "app": {
+        "title": "Mega लिंक जेनरेटर",
+        "subtitle": "Mega.nz URLs से डायरेक्ट डाउनलोड लिंक बनाएं",
+        "version": "v2.0"
+    },
+    "nav": {
+        "home": "मुख्य",
+        "history": "इतिहास",
+        "about": "जानकारी"
+    },
+    "input": {
+        "label": "Mega.nz URL",
+        "placeholder": "https://mega.nz/file/...",
+        "singleMode": "एकल मोड",
+        "multiMode": "मल्टी मोड",
+        "multiPlaceholder": "कई URLs पेस्ट करें (प्रति पंक्ति एक)",
+        "dragDrop": "Mega URLs वाला टेक्स्ट यहाँ ड्रैग करें",
+        "dragActive": "यहाँ छोड़ें!"
+    },
+    "buttons": {
+        "generate": "लिंक जनरेट करें",
+        "copy": "कॉपी",
+        "copied": "कॉपी हुआ",
+        "download": "डाउनलोड",
+        "clear": "साफ करें",
+        "testLink": "लिंक टेस्ट करें",
+        "testing": "टेस्ट हो रहा है...",
+        "process": "लिंक्स प्रोसेस करें",
+        "processing": "प्रोसेस हो रहा है...",
+        "showQR": "QR दिखाएँ",
+        "downloadQR": "QR डाउनलोड करें",
+        "export": "JSON निर्यात"
+    },
+    "results": {
+        "title": "परिणाम",
+        "fileName": "फाइल नाम",
+        "fileSize": "आकार",
+        "directLink": "डायरेक्ट लिंक",
+        "linkStatus": "लिंक स्थिति",
+        "working": "सही",
+        "broken": "टूटा",
+        "unknown": "टेस्ट नहीं",
+        "qrCode": "QR कोड",
+        "stats": "डाउनलोड आँकड़े",
+        "ready": "तैयार"
+    },
+    "stats": {
+        "downloads": "डाउनलोड",
+        "bandwidth": "प्रयुक्त बैंडविड्थ",
+        "lastAccess": "अंतिम एक्सेस",
+        "estimateTitle": "अनुमानित डाउनलोड समय",
+        "sizeVisual": "सापेक्ष आकार (5 GB तक)",
+        "speed": {
+            "slow": "मोबाइल (5 Mbps)",
+            "average": "होम (20 Mbps)",
+            "fast": "फाइबर (100 Mbps)"
+        },
+        "time": {
+            "h": "घं",
+            "m": "मि",
+            "s": "से"
+        }
+    },
+    "history": {
+        "title": "लिंक इतिहास",
+        "show": "इतिहास दिखाएँ",
+        "hide": "इतिहास छुपाएँ",
+        "empty": "कोई इतिहास नहीं",
+        "regenerate": "फिर से जनरेट",
+        "delete": "हटाएँ",
+        "clear": "सब साफ करें",
+        "confirmClear": "क्या आप वाकई पूरा इतिहास साफ करना चाहते हैं?"
+    },
+    "multiLink": {
+        "title": "मल्टी-प्रोसेस परिणाम",
+        "processed": "प्रोसेस्ड",
+        "success": "सफल",
+        "failed": "विफल",
+        "itemStatus": "स्थिति"
+    },
+    "features": {
+        "title": "फीचर्स",
+        "pwa": {
+            "title": "इंस्टॉल करने योग्य PWA",
+            "desc": "ऐप इंस्टॉल करें और ऑफ़लाइन इस्तेमाल करें"
+        },
+        "batch": {
+            "title": "बैच प्रोसेसिंग",
+            "desc": "एक साथ कई लिंक प्रोसेस करें"
+        },
+        "history": {
+            "title": "लोकल इतिहास",
+            "desc": "आपके लिंक स्वतः सेव"
+        },
+        "qr": {
+            "title": "QR कोड",
+            "desc": "आसानी से साझा करने के लिए QR"
+        },
+        "i18n": {
+            "title": "बहुभाषी",
+            "desc": "8 भाषाओं में उपलब्ध"
+        },
+        "test": {
+            "title": "लिंक सत्यापन",
+            "desc": "जाँचें कि लिंक काम कर रहे हैं"
+        }
+    },
+    "errors": {
+        "invalidUrl": "अमान्य Mega.nz URL",
+        "networkError": "नेटवर्क त्रुटि, कनेक्शन जाँचें",
+        "serverError": "सर्वर त्रुटि, पुनः प्रयास करें",
+        "timeout": "अनुरोध में अधिक समय लगा",
+        "folderNotSupported": "फोल्डर लिंक अभी समर्थित नहीं हैं",
+        "rateLimited": "बहुत अधिक अनुरोध, {seconds} सेकंड प्रतीक्षा करें",
+        "generic": "कुछ गलत हुआ, पुनः प्रयास करें"
+    },
+    "developer": {
+        "mode": "डेवलपर मोड",
+        "enable": "सक्रिय",
+        "disable": "निष्क्रिय",
+        "apiCall": "API कॉल",
+        "responseTime": "प्रतिक्रिया समय",
+        "headers": "हेडर्स",
+        "timestamp": "समय"
+    },
+    "dragDrop": {
+        "hint": "टेक्स्ट फाइल या URL यहाँ ड्रैग करें",
+        "active": "प्रोसेस करने के लिए छोड़ें!"
+    },
+    "language": {
+        "select": "भाषा",
+        "es": "Español",
+        "en": "English",
+        "pt": "Português",
+        "fr": "Français",
+        "zh": "中文",
+        "hi": "हिन्दी",
+        "ar": "العربية",
+        "ru": "Русский"
+    },
+    "footer": {
+        "disclaimer": "यह टूल आपके लिंक सहेजता या लॉग नहीं करता",
+        "opensource": "ओपन सोर्स",
+        "madeWith": "बनाया गया",
+        "by": "द्वारा"
+    },
+    "install": {
+        "prompt": "इस ऐप को ऑफ़लाइन उपयोग के लिए इंस्टॉल करें",
+        "button": "इंस्टॉल",
+        "dismiss": "अभी नहीं"
+    },
+    "rateLimit": {
+        "active": "रेट लिमिट सक्रिय",
+        "wait": "{seconds} सेकंड प्रतीक्षा करें"
+    }
+}

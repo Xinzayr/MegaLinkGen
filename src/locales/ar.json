@@ -1,0 +1,157 @@
+{
+    "app": {
+        "title": "مولد روابط Mega",
+        "subtitle": "إنشاء روابط تنزيل مباشرة من عناوين Mega.nz",
+        "version": "v2.0"
+    },
+    "nav": {
+        "home": "الرئيسية",
+        "history": "السجل",
+        "about": "حول"
+    },
+    "input": {
+        "label": "رابط Mega.nz",
+        "placeholder": "https://mega.nz/file/...",
+        "singleMode": "وضع مفرد",
+        "multiMode": "وضع متعدد",
+        "multiPlaceholder": "الصق عدة روابط (رابط لكل سطر)",
+        "dragDrop": "اسحب النص الذي يحوي روابط Mega هنا",
+        "dragActive": "اتركه هنا!"
+    },
+    "buttons": {
+        "generate": "توليد الرابط",
+        "copy": "نسخ",
+        "copied": "تم النسخ",
+        "download": "تنزيل",
+        "clear": "مسح",
+        "testLink": "اختبار الرابط",
+        "testing": "جارٍ الاختبار...",
+        "process": "معالجة الروابط",
+        "processing": "جارٍ المعالجة...",
+        "showQR": "إظهار QR",
+        "downloadQR": "تنزيل QR",
+        "export": "تصدير JSON"
+    },
+    "results": {
+        "title": "النتيجة",
+        "fileName": "اسم الملف",
+        "fileSize": "الحجم",
+        "directLink": "الرابط المباشر",
+        "linkStatus": "حالة الرابط",
+        "working": "يعمل",
+        "broken": "معطل",
+        "unknown": "غير مختبر",
+        "qrCode": "رمز QR",
+        "stats": "إحصاءات التنزيل",
+        "ready": "جاهز"
+    },
+    "stats": {
+        "downloads": "عدد التنزيلات",
+        "bandwidth": "النطاق المستخدم",
+        "lastAccess": "آخر وصول",
+        "estimateTitle": "الوقت التقديري للتنزيل",
+        "sizeVisual": "الحجم النسبي (حد 5 غيغابايت)",
+        "speed": {
+            "slow": "جوال (5 Mbps)",
+            "average": "منزل (20 Mbps)",
+            "fast": "ألياف (100 Mbps)"
+        },
+        "time": {
+            "h": "س",
+            "m": "د",
+            "s": "ث"
+        }
+    },
+    "history": {
+        "title": "سجل الروابط",
+        "show": "عرض السجل",
+        "hide": "إخفاء السجل",
+        "empty": "لا يوجد روابط في السجل",
+        "regenerate": "إعادة توليد",
+        "delete": "حذف",
+        "clear": "مسح الكل",
+        "confirmClear": "هل أنت متأكد من مسح السجل بالكامل؟"
+    },
+    "multiLink": {
+        "title": "نتائج المعالجة المتعددة",
+        "processed": "المعالجة",
+        "success": "ناجح",
+        "failed": "فشل",
+        "itemStatus": "الحالة"
+    },
+    "features": {
+        "title": "الميزات",
+        "pwa": {
+            "title": "تطبيق PWA قابل للتثبيت",
+            "desc": "ثبّت التطبيق واستخدمه دون اتصال"
+        },
+        "batch": {
+            "title": "معالجة دفعية",
+            "desc": "عالج عدة روابط دفعة واحدة"
+        },
+        "history": {
+            "title": "سجل محلي",
+            "desc": "حفظ روابطك تلقائياً"
+        },
+        "qr": {
+            "title": "رموز QR",
+            "desc": "إنشاء QR للمشاركة بسهولة"
+        },
+        "i18n": {
+            "title": "متعدد اللغات",
+            "desc": "متاح بثماني لغات"
+        },
+        "test": {
+            "title": "تحقق من الروابط",
+            "desc": "تأكد أن الروابط تعمل"
+        }
+    },
+    "errors": {
+        "invalidUrl": "رابط Mega.nz غير صالح",
+        "networkError": "خطأ في الشبكة. تحقق من الاتصال",
+        "serverError": "خطأ في الخادم. حاول مجدداً",
+        "timeout": "انتهى وقت الطلب",
+        "folderNotSupported": "روابط المجلدات غير مدعومة حالياً",
+        "rateLimited": "طلبات كثيرة. انتظر {seconds} ث",
+        "generic": "حدث خطأ. حاول مرة أخرى"
+    },
+    "developer": {
+        "mode": "وضع المطور",
+        "enable": "تفعيل",
+        "disable": "تعطيل",
+        "apiCall": "استدعاء API",
+        "responseTime": "زمن الاستجابة",
+        "headers": "الترويسات",
+        "timestamp": "الوقت"
+    },
+    "dragDrop": {
+        "hint": "اسحب ملفات نصية أو روابط إلى هنا",
+        "active": "اترك للمعالجة!"
+    },
+    "language": {
+        "select": "اللغة",
+        "es": "Español",
+        "en": "English",
+        "pt": "Português",
+        "fr": "Français",
+        "zh": "中文",
+        "hi": "हिन्दी",
+        "ar": "العربية",
+        "ru": "Русский"
+    },
+    "footer": {
+        "disclaimer": "هذه الأداة لا تخزن أو تسجل روابطك",
+        "opensource": "مفتوح المصدر",
+        "madeWith": "صنع بـ",
+        "by": "بواسطة"
+    },
+    "install": {
+        "prompt": "ثبّت هذا التطبيق للاستخدام دون اتصال",
+        "button": "تثبيت",
+        "dismiss": "ليس الآن"
+    },
+    "rateLimit": {
+        "active": "تم تفعيل الحد",
+        "wait": "انتظر {seconds} ث"
+    }
+}
