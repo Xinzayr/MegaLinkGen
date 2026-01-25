@@ -8,10 +8,11 @@
 
       <!-- Made with & Powered by lines -->
       <div class="space-y-2">
-        <!-- Made with Xinzaýr -->
+        <!-- Made with by Xinzaýr -->
         <p class="flex items-center justify-center gap-2 flex-wrap">
           <span class="text-neutral-500">{{ t('footer.madeWith') }}</span>
           <span aria-hidden="true">❤️</span>
+          <span class="text-neutral-500">{{ t('footer.by') }}</span>
           <a
             href="https://github.com/Xinzayr"
             target="_blank"
