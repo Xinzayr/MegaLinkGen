@@ -1,1 +1,25 @@
-if(!self.define){let e,s={};const n=(n,i)=>(n=new URL(n+".js",i).href,s[n]||new Promise(s=>{if("document"in self){const e=document.createElement("script");e.src=n,e.onload=s,document.head.appendChild(e)}else e=n,importScripts(n),s()}).then(()=>{let e=s[n];if(!e)throw new Error(`Module ${n} didn’t register its module`);return e}));self.define=(i,o)=>{const t=e||("document"in self?document.currentScript.src:"")||location.href;if(s[t])return;let r={};const l=e=>n(e,t),a={module:{uri:t},exports:r,require:l};s[t]=Promise.all(i.map(e=>a[e]||l(e))).then(e=>(o(...e),r))}}define(["./workbox-1d305bb8"],function(e){"use strict";self.skipWaiting(),e.clientsClaim(),e.precacheAndRoute([{url:"index.html",revision:"ccaea4bca63d9feaee22a02ca63008a2"},{url:"assets/workbox-window.prod.es5-vqzQaGvo.js",revision:null},{url:"assets/vendor-DknVns_W.js",revision:null},{url:"assets/qr-JP79f-a9.js",revision:null},{url:"assets/index-Dia4_Zz1.js",revision:null},{url:"assets/index-CaI-do0l.css",revision:null},{url:"assets/i18n-C1k15iJ5.js",revision:null},{url:"manifest.webmanifest",revision:"ee6fe8269d91ad97179cac4368220a99"}],{}),e.cleanupOutdatedCaches(),e.registerRoute(new e.NavigationRoute(e.createHandlerBoundToURL("index.html"))),e.registerRoute(/^https:\/\/fonts\.googleapis\.com\/.*/i,new e.CacheFirst({cacheName:"google-fonts-cache",plugins:[new e.ExpirationPlugin({maxEntries:10,maxAgeSeconds:31536e3}),new e.CacheableResponsePlugin({statuses:[0,200]})]}),"GET")});
+
+self.addEventListener('install', (e) => {
+  self.skipWaiting();
+});
+self.addEventListener('activate', (e) => {
+  self.registration.unregister()
+    .then(() => self.clients.matchAll())
+    .then((clients) => {
+      clients.forEach((client) => {
+        if (client instanceof WindowClient)
+          client.navigate(client.url);
+      });
+      return Promise.resolve();
+    })
+    .then(() => {
+      self.caches.keys().then((cacheNames) => {
+        Promise.all(
+          cacheNames.map((cacheName) => {
+            return self.caches.delete(cacheName);
+          }),
+        );
+      })
+    });
+});
+    
