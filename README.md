@@ -7,7 +7,7 @@
 - 📱 **PWA Instalable**: Instala la app y úsala offline
 - ⚡ **Procesamiento por Lotes**: Procesa múltiples enlaces simultáneamente
 - 📚 **Historial Local**: Guarda automáticamente tus enlaces
-- 🌍 **Multi-idioma**: Español, Inglés, Portugués y Francés
+- 🌍 **Multi-idioma**: Español, Inglés, Portugués, Francés, Ruso, Árabe, Hindi y Chino
 - 📱 **Códigos QR**: Genera y descarga códigos QR
 - ✅ **Verificación de Enlaces**: Comprueba si los enlaces funcionan
 - 🎨 **UI Moderna**: Construida con Vue 3 + Tailwind CSS
@@ -144,9 +144,16 @@ Las contribuciones son bienvenidas. Por favor:
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
 
+Al contribuir, aceptas que tus aportes se distribuyan bajo la licencia del proyecto.
+
 ## 📄 Licencia
 
-MIT License - siéntete libre de usar este proyecto como desees.
+Este proyecto se distribuye bajo la **GNU Affero General Public License v3.0** (AGPL-3.0-or-later).
+
+- Texto completo: ver [LICENSE](./LICENSE)
+- Avisos y consideraciones de marca/terceros: ver [NOTICE](./NOTICE)
+
+Nota importante (AGPL): si despliegas una versión modificada accesible por red, debes ofrecer el código fuente correspondiente a los usuarios que interactúen con esa versión, conforme a la sección 13.
 
 ## 🔗 Enlaces
 
