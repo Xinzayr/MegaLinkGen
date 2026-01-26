@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# Nota: este proyecto es una SPA. Los buscadores modernos pueden indexar la home.
