@@ -98,8 +98,20 @@ const { t } = useI18n()
 const deploymentType = computed(() => {
   if (typeof window === 'undefined') return 'unknown'
   const host = window.location.host || ''
-  if (host.includes('github.io')) return 'gh-pages'
-  if (host.includes('vercel.app')) return 'vercel'
+
+  // Whitelist of known deployment hosts (optionally including explicit ports)
+  const hostToDeploymentType = {
+    'xinzayr.github.io': 'gh-pages',
+    'xinzayr.github.io:80': 'gh-pages',
+    'xinzayr.github.io:443': 'gh-pages',
+    'megalinkgen.vercel.app': 'vercel',
+    'megalinkgen.vercel.app:80': 'vercel',
+    'megalinkgen.vercel.app:443': 'vercel'
+  }
+
+  const mappedType = hostToDeploymentType[host]
+  if (mappedType) return mappedType
+
   return 'development'
 })
 
